@@ -1,0 +1,39 @@
+t pull --rebase
+git rebase --continue
+git pull --rebase其实就等于git fetch + git rebase
+
+git diff 查看修改和缓存中的修改信息
+git diff cache 查看缓存中的和commit中的修改信息
+git branch -a           查看所有分支。
+git branch new_branch   创建新的分支。
+git branch -d branch    删除分支。
+git checkout branch     切换当前分支。-f参数可以覆盖未提交内容。
+git branch -v
+git remote -v
+.gitignore 在规则建立之前的就已经在代码库中的文件不会受到忽略规则的影响，要移除这些文件，只能输入git rm filename来移除。
+git rm -f *.o 取消跟踪并在工作目录中删除
+git rm --cached readme.txt 取消跟踪不在工作目录中删除
+git mv file_from file_to 相当于 mv README.txt README $ git rm README.txt $ git add README
+git log -p -2  -p 选项展开显示每次提交的内容差异，用 -2 则仅显示最近的两次更新：
+git log --stat 简要显示
+git log --pretty=format:"%h - %an, %ar : %s"
+git log --pretty=format:"%h %s" --graph
+git log --since=2.weeks
+git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \
+--before="2008-11-01" --no-merges -- t/
+git reset HEAD benchmarks.rb 取消已经暂存的文件
+git checkout -- benchmarks.rb 取消对文件的修改
+
+git remote -v 查看现有的远程仓库
+git remote add pb git://github.com/paulboone/ticgit.git 添加一个远程仓库 并用pb命名。
+git remote rm paul 删除远程仓库
+git remote rename pb paul 重名远程仓库 本地也会跟着修改
+git remote 查看远程参考
+git remote show
+
+git branch 显示所有开发分支
+git branch experimental 创建新的开发分支
+git checkout experimental 切换到”experimental”分支
+git merge experimental 合并分支，如果这个两个分支间的修改没有冲突(conflict), 那么合并就完成了。如有有冲突，输入下面的命令就可以查看当前有哪些文件产生了冲突:$ git diff，git commit -a
+git branch -d experimental 删除分支（合并过才删除）
+git branch -D crazy-idea 强制删除分支
