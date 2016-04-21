@@ -6,5 +6,6 @@
             "email": "xiao.bona@qianka.com"
         }
     ],
+    "minimum-stability":"dev",
     "require": {}
 }
